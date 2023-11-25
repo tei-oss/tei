@@ -1,0 +1,11 @@
+[package]
+name = "tei-filter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tei-core = { path = "../tei-core" }
+meilisearch-sdk = { workspace = true }
+serde = { workspace = true }
+itertools = { workspace = true }
+thiserror = { workspace = true }
