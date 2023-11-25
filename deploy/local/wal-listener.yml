@@ -1,0 +1,30 @@
+listener:
+  slotName: walli_1
+  refreshConnection: 30s
+  heartbeatInterval: 10s
+  filter:
+    tables:
+      tags:
+        - insert
+        - update
+        - delete
+  topicsMap:
+    public_tags: "tags"
+logger:
+  level: info
+  fmt: json
+database:
+  host: pg
+  port: 5432
+  name: localc
+  user: localc
+  password: localc
+  debug: false
+publisher:
+   type: nats
+   address: nats:4222
+   topic: "walli"
+   topicPrefix: ""
+monitoring:
+  sentryDSN: ""
+  promAddr: ":2112"
