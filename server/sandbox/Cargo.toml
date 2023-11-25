@@ -11,3 +11,7 @@ tei-data = { path = "../tei-data" }
 
 tokio = { workspace = true }
 deadpool-postgres = { workspace = true }
+tokio-postgres = { workspace = true }
+
+tracing-subscriber = { workspace = true }
+tracing = { workspace = true }
