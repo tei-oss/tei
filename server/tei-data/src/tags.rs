@@ -6,7 +6,10 @@ use tei_core::{
 use thiserror::Error;
 use tokio_postgres::Row;
 
-use crate::{auxiliary, extensions::*};
+use crate::{
+    auxiliary,
+    extensions::{FromRow, RowEx},
+};
 
 pub struct TagsDb {}
 

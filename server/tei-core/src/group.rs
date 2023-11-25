@@ -8,6 +8,7 @@ pub struct GroupId {
 }
 
 impl GroupId {
+    #[must_use]
     pub fn as_i32(self) -> i32 {
         self.id
     }

@@ -1,4 +1,4 @@
 {
   "rust-analyzer.check.command": "clippy",
-  "rust-analyzer.check.extraArgs": ["--", "-Wclippy::pedantic"]
+  "rust-analyzer.check.extraArgs": ["--", "-Wclippy::pedantic", "-Aclippy::missing_panics_doc", "-Aclippy::missing_errors_doc", "-Aclippy::module_name_repetitions"]
 }
