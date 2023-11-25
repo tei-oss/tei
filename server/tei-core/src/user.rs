@@ -6,6 +6,7 @@ pub struct UserId {
 }
 
 impl UserId {
+    #[must_use]
     pub fn as_i32(&self) -> i32 {
         self.id
     }

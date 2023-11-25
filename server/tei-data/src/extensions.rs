@@ -1,5 +1,6 @@
 use std::fmt;
 
+use std::string::String;
 use tokio_postgres::{row::RowIndex, Row};
 
 pub trait FromRow {
@@ -30,6 +31,6 @@ impl RowEx for Row {
         I: RowIndex + fmt::Display,
     {
         let value: Option<String> = self.get(idx);
-        value.map(|v| v.into_boxed_str())
+        value.map(String::into_boxed_str)
     }
 }

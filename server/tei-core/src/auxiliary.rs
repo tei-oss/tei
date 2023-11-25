@@ -10,6 +10,7 @@ pub struct Audit {
 }
 
 impl Audit {
+    #[must_use]
     pub fn created(id: &UserId) -> Self {
         Self {
             created: AuditAction::now(id.to_owned()),
@@ -25,6 +26,7 @@ impl Audit {
         self
     }
 
+    #[must_use]
     pub fn new(created: AuditAction, updated: Option<AuditAction>, version: i32) -> Self {
         Self {
             created,
@@ -41,6 +43,7 @@ pub struct AuditAction {
 }
 
 impl AuditAction {
+    #[must_use]
     pub fn now(id: UserId) -> Self {
         Self {
             user_id: id,
@@ -48,6 +51,7 @@ impl AuditAction {
         }
     }
 
+    #[must_use]
     pub fn new(id: UserId, timestamp: OffsetDateTime) -> Self {
         Self {
             user_id: id,
