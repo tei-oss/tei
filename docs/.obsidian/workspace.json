@@ -1,0 +1,240 @@
+{
+  "main": {
+    "id": "4daabb8df8a064f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7ea1588b6e27327",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8294054ab13a6436",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🗄 Database/UserDb.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3df2ad09568d5a21",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🗃 Entities/Tag.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d9824d5930a1650e",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc082de78d7ea29c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "98399497d1da5642",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bce8fdd8ab429720",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "хьюстон",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b0469d79f9993ff2",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "53fc39ebe22e48f9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2a82af518aed19f9",
+    "type": "split",
+    "children": [
+      {
+        "id": "c4d80bea512eac3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "499f1e7dd1051f16",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "🗄 Database/UserDb.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f4d04b4e98e4f9db",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "🗄 Database/UserDb.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "82363507b22a24d5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "bcad234b4de15c9b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "🗄 Database/UserDb.md"
+              }
+            }
+          },
+          {
+            "id": "b4458fd533ad1187",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "9c3a5d3f21c5c4a9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "8294054ab13a6436",
+  "lastOpenFiles": [
+    "🗃 Entities/Group.md",
+    "🗃 Entities/Tag.md",
+    "🗄 Database/UserDb.md",
+    "🗃 Entities/User.md",
+    "🗃 Entities/Entry - WIP.md",
+    "🗃 Entities/Gallery - WIP.md",
+    "📝 Concepts/Audit.md",
+    "🏠 Home.md",
+    "🗄 Database",
+    "👷‍♀️ Processing",
+    "🔍 Search/Tags.md",
+    "🔍 Search/Entries.md",
+    "🔍 Search",
+    "🏗 Workflows",
+    "📝 Concepts/Timestamp.md",
+    "📝 Concepts/Id.md",
+    "📝 Concepts/CAS Updates.md",
+    "📝 Concepts",
+    "🗃 Entities",
+    "🗓 Daily Notes/2023-11-23.md",
+    "🗄 Documents/📆 Планирования/Инфраструктурные задачи.md",
+    "🗄 Documents/🔬 Performance Research/Инфрапроблемы.md",
+    "🗄 Documents/👩‍⚖️ Power Of Attorney/Цепочки Роуминг.md",
+    "🗓 Daily Notes/2023-11-21.md",
+    "🦇 Duty/2023-11-13 Duty 5.md",
+    "🏗 Infra/qteam Политики запросов, троттлинг.md",
+    "📝 Tasks.md",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231120002221.png",
+    "🗓 Daily Notes/2023-11-10.md",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231113184941.png",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231113185223.png",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231113184833.png",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231120093511.png",
+    "🦇 Duty/2023-10-16 Duty 4.md",
+    "👔 Процессы/Планирования.md",
+    "👔 Процессы/Идеи.md",
+    "🗄 Documents/Random.md",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231117190800.png",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231113182805.png",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231113183544.png",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231113183537.png",
+    "_🔧 obsidian/📎 Attachments/Pasted image 20231113182818.png",
+    "🗄 Documents/📆 Планирования",
+    "👨‍⚖️ МЧД",
+    "👨‍💻 Люди",
+    "🤵 Lead",
+    "Untitled.canvas"
+  ]
+}

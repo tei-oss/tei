@@ -1,0 +1,12 @@
+[package]
+name = "tei-data"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tei-core = { path = "../tei-core" }
+tokio-postgres = { workspace = true }
+time = { workspace = true }
+deadpool-postgres = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }

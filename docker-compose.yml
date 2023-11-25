@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  pg:
+    image: 'postgres:16.1'
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_USER: localc
+      POSTGRES_PASSWORD: localc
+      POSTGRES_DB: localc
+  
+  meilisearch:
+    image: 'getmeili/meilisearch:v1.5.0'
+    ports:
+      - "17700:7700"
+    environment:
+      - MEILI_ENV=development
+      - MEILI_NO_ANALYTICS=true
+      - MEILI_MAX_INDEXING_MEMORY=100Mb
+
+  redis:
+    image: 'ghcr.io/dragonflydb/dragonfly:v1.12.1'
+    ports:
+      - "16379:6379"
+    command: --cache_mode=true --proactor_threads=1 --maxmemory=512mb --keys_output_limit=12288 --logtostderr --requirepass=localredis
+  
+  nats:
+    image: nats:2.10.5
+    command: "-js"
+    ports:
+      - "14222:4222"
