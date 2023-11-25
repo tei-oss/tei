@@ -1,14 +1,22 @@
-version: '3'
+version: '3.5'
 
 services:
   pg:
     image: 'postgres:16.1'
+    command: postgres -c wal_level=logical
     ports:
       - "15432:5432"
     environment:
       POSTGRES_USER: localc
       POSTGRES_PASSWORD: localc
       POSTGRES_DB: localc
+    healthcheck:
+      test: pg_isready -U localc
+      interval: 1s
+      timeout: 2s
+      retries: 10
+    volumes:
+      - pg-data:/var/lib/postgresql/data
   
   meilisearch:
     image: 'getmeili/meilisearch:v1.5.0'
@@ -30,3 +38,6 @@ services:
     command: "-js"
     ports:
       - "14222:4222"
+
+volumes:
+  pg-data:
