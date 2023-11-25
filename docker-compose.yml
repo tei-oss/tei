@@ -40,14 +40,14 @@ services:
       - "14222:4222"
   
   walli:
-    image: ihippik/wal-listener:v2.4.2
-    volumes:
-      - ./deploy/local/wal-listener.yml:/config.yml
-    depends_on:
-      - pg
-      - nats
-    ports:
-      - "10001:2112" # prometheus
+   image: ihippik/wal-listener:v2.4.2
+   volumes:
+     - ./deploy/local/wal-listener.yml:/config.yml
+   depends_on:
+     - pg
+     - nats
+   ports:
+     - "10001:2112" # prometheus
 
 volumes:
   pg-data:
