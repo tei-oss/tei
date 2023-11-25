@@ -9,6 +9,7 @@ async fn main() {
     config.port = Some(15432);
 
     let _pool = config.create_pool(Some(Runtime::Tokio1), NoTls).unwrap();
+    let mut _conn = _pool.get().await.unwrap();
 
     todo!()
 }
