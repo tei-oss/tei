@@ -3,7 +3,7 @@ use std::fmt;
 use tokio_postgres::{row::RowIndex, Row};
 
 pub trait FromRow {
-    fn into_domain(row: &tokio_postgres::Row) -> Self;
+    fn from_row(row: &tokio_postgres::Row) -> Self;
 }
 
 pub trait RowEx {

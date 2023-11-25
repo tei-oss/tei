@@ -12,7 +12,7 @@ pub struct TagRepository {
 }
 
 impl FromRow for Tag {
-    fn into_domain(row: &Row) -> Self {
+    fn from_row(row: &Row) -> Self {
         let audit = auxiliary::create_audit(row);
 
         let group_id: i32 = row.get("group_id");
@@ -35,13 +35,7 @@ impl TagRepository {
         Self { db }
     }
 
-    pub async fn plus_one(&self, val: i32) -> i32 {
-        let result = self.db.query("select 1 + $1", &[&val]).await.unwrap();
-
-        result[0].get(0)
-    }
-
-    pub async fn insert(&self, tag: &Tag) {
+    pub async fn insert(&self, _tag: &Tag) {
         todo!();
 
         // let result = self.db.execute("insert into tags(group_id, label, color, description, icon, created_by, created_at, version) values($1, $2, $3, $4, $5, $6, $7, $8)", &[
@@ -68,6 +62,6 @@ impl TagRepository {
             .await
             .unwrap();
 
-        Some(Tag::into_domain(&result[0]))
+        Some(Tag::from_row(&result[0]))
     }
 }
