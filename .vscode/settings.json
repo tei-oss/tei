@@ -1,4 +1,19 @@
 {
   "rust-analyzer.check.command": "clippy",
-  "rust-analyzer.check.extraArgs": ["--", "-Wclippy::pedantic", "-Aclippy::missing_panics_doc", "-Aclippy::missing_errors_doc", "-Aclippy::module_name_repetitions"]
+  "rust-analyzer.check.extraArgs": [
+    "--",
+    "-Wclippy::pedantic",
+    "-Aclippy::missing_panics_doc",
+    "-Aclippy::missing_errors_doc",
+    "-Aclippy::module_name_repetitions"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.useEditorConfig": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
 }
