@@ -1,0 +1,55 @@
+name: "Server Workflow"
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    paths:
+      - "server/**"
+    branches:
+      - "main"
+
+env:
+  RUSTFLAGS: -Dwarnings
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./server
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: rustup toolchain install stable --profile minimal
+      - uses: Swatinem/rust-cache@v2
+      - name: Build
+        run: cargo build --release
+
+  test:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./server
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: rustup toolchain install stable --profile minimal
+      - uses: Swatinem/rust-cache@v2
+      - name: Test
+        run: cargo test --release
+
+  lint:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./server
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: rustup toolchain install stable --profile minimal
+      - uses: Swatinem/rust-cache@v2
+      - name: Lint
+        run: cargo clippy
