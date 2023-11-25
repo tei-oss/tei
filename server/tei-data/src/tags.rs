@@ -14,12 +14,12 @@ use crate::{
 pub struct TagsDb {}
 
 #[derive(Error, Debug)]
-pub enum TagsError {
+pub enum Error {
     #[error("postgres error")]
     DataStore(#[from] tokio_postgres::Error),
 }
 
-pub type Result<T> = core::result::Result<T, TagsError>;
+pub type Result<T> = core::result::Result<T, Error>;
 
 impl FromRow for Tag {
     fn from_row(row: &Row) -> Self {

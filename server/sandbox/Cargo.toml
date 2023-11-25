@@ -8,10 +8,12 @@ edition = "2021"
 [dependencies]
 tei-core = { path = "../tei-core" }
 tei-data = { path = "../tei-data" }
+tei-filter = { path = "../tei-filter" }
 
 tokio = { workspace = true }
 deadpool-postgres = { workspace = true }
 tokio-postgres = { workspace = true }
+meilisearch-sdk = { workspace = true }
 
 tracing-subscriber = { workspace = true }
 tracing = { workspace = true }

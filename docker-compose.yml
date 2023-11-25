@@ -1,8 +1,8 @@
-version: '3.5'
+version: "3.5"
 
 services:
   pg:
-    image: 'postgres:16.1'
+    image: "postgres:16.1"
     command: postgres -c wal_level=logical
     ports:
       - "15432:5432"
@@ -17,37 +17,41 @@ services:
       retries: 10
     volumes:
       - pg-data:/var/lib/postgresql/data
-  
-  # meilisearch:
-  #   image: 'getmeili/meilisearch:v1.5.0'
-  #   ports:
-  #     - "17700:7700"
-  #   environment:
-  #     - MEILI_ENV=development
-  #     - MEILI_NO_ANALYTICS=true
-  #     - MEILI_MAX_INDEXING_MEMORY=100Mb
+
+  meilisearch:
+    image: "getmeili/meilisearch:v1.5.0"
+    ports:
+      - "17700:7700"
+    environment:
+      - MEILI_ENV=development
+      - MEILI_NO_ANALYTICS=true
+      - MEILI_MAX_INDEXING_MEMORY=100Mb
+      - MEILI_EXPERIMENTAL_ENABLE_METRICS=true # prometheus on default port
+    volumes:
+      - meili-data:/meili_data
 
   # redis:
   #   image: 'ghcr.io/dragonflydb/dragonfly:v1.12.1'
   #   ports:
   #     - "16379:6379"
   #   command: --cache_mode=true --proactor_threads=1 --maxmemory=512mb --keys_output_limit=12288 --logtostderr --requirepass=localredis
-  
+
   nats:
     image: nats:2.10.5
     command: "-js"
     ports:
       - "14222:4222"
-  
+
   walli:
-   image: ihippik/wal-listener:v2.4.2
-   volumes:
-     - ./deploy/local/wal-listener.yml:/config.yml
-   depends_on:
-     - pg
-     - nats
-   ports:
-     - "10001:2112" # prometheus
+    image: ihippik/wal-listener:v2.4.2
+    volumes:
+      - ./deploy/local/wal-listener.yml:/config.yml
+    depends_on:
+      - pg
+      - nats
+    ports:
+      - "10001:2112" # prometheus
 
 volumes:
   pg-data:
+  meili-data:
