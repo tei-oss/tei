@@ -19,5 +19,3 @@ pub fn create_audit(row: &tokio_postgres::Row) -> Audit {
 
     Audit::new(created, updated, version)
 }
-
-pub type DbConnection = deadpool_postgres::Object;
