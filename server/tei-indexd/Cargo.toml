@@ -1,0 +1,23 @@
+[package]
+name = "tei-indexd"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tei-core = { workspace = true }
+tei-data = { workspace = true }
+tei-mq = { workspace = true }
+tei-filter = { workspace = true }
+
+dotenvy = { workspace = true }
+tokio = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing = { workspace = true }
+futures = { workspace = true }
+color-eyre = { workspace = true }
+itertools = { workspace = true }
+
+deadpool-postgres = { workspace = true }
+meilisearch-sdk = { workspace = true }

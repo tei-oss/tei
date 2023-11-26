@@ -7,9 +7,9 @@ services:
     ports:
       - "15432:5432"
     environment:
-      POSTGRES_USER: localc
-      POSTGRES_PASSWORD: localc
-      POSTGRES_DB: localc
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
     healthcheck:
       test: pg_isready -U localc
       interval: 1s
