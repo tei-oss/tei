@@ -1,7 +1,8 @@
+use itertools::Itertools;
 use meilisearch_sdk::{Client, Index, TaskInfo};
 use serde::{Deserialize, Serialize};
 use std::convert::Into;
-use tei_core::tag::Tag;
+use tei_core::tag::{Tag, TagId};
 use thiserror::Error;
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -21,8 +22,8 @@ pub enum Error {
 
 pub type Result<T> = core::result::Result<T, Error>;
 
-impl From<&Tag> for IndexEntry {
-    fn from(value: &Tag) -> Self {
+impl From<Tag> for IndexEntry {
+    fn from(value: Tag) -> Self {
         Self {
             id: value.id.as_i64(),
             group_id: value.group_id.as_i32(),
@@ -57,10 +58,17 @@ impl TagIndex {
         Ok(())
     }
 
-    pub async fn add<'a, T: AsRef<[&'a Tag]>>(&self, tags: T) -> Result<TaskInfo> {
-        let dtos: Vec<IndexEntry> = tags.as_ref().iter().map(|t| (*t).into()).collect();
+    pub async fn add(&self, tags: Vec<Tag>) -> Result<TaskInfo> {
+        let dtos: Vec<IndexEntry> = tags.into_iter().map(Into::into).collect();
 
         let task = self.index.add_documents(&dtos, Some("id")).await?;
+
+        Ok(task)
+    }
+
+    pub async fn remove(&self, ids: Vec<TagId>) -> Result<TaskInfo> {
+        let ids = ids.into_iter().map(|i| i.as_i64()).collect_vec();
+        let task = self.index.delete_documents(&ids).await?;
 
         Ok(task)
     }

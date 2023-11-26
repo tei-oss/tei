@@ -41,9 +41,13 @@ impl TryFrom<Payload> for TagEvent {
             return Err(Error::WrongTable(value.table));
         }
 
-        let id: TagIdDto = serde_json::from_value(value.data)?;
-        let id = id.into();
+        let id: TagIdDto = match value.action {
+            Action::Insert | Action::Update => serde_json::from_value(value.data)?,
+            Action::Delete => serde_json::from_value(value.data_old)?,
+            Action::Unknown => return Ok(TagEvent::Unknown),
+        };
 
+        let id = id.into();
         let event = match value.action {
             Action::Insert => TagEvent::Created(id),
             Action::Update => TagEvent::Updated(id),
