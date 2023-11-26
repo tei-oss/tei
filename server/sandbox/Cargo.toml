@@ -3,17 +3,19 @@ name = "sandbox"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-tei-core = { path = "../tei-core" }
-tei-data = { path = "../tei-data" }
-tei-filter = { path = "../tei-filter" }
+tei-core = { workspace = true }
+tei-data = { workspace = true }
+tei-filter = { workspace = true }
+tei-mq = { workspace = true }
 
 tokio = { workspace = true }
 deadpool-postgres = { workspace = true }
 tokio-postgres = { workspace = true }
 meilisearch-sdk = { workspace = true }
+uuid = { workspace = true }
+async-nats = { workspace = true }
+futures = { workspace = true }
 
 tracing-subscriber = { workspace = true }
 tracing = { workspace = true }

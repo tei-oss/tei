@@ -24,7 +24,7 @@ pub type Result<T> = core::result::Result<T, Error>;
 impl From<&Tag> for IndexEntry {
     fn from(value: &Tag) -> Self {
         Self {
-            id: value.id.id,
+            id: value.id.as_i64(),
             group_id: value.group_id.as_i32(),
             label: value.label.to_string(),
             description: value.description.clone().map(|e| e.to_string()),
