@@ -2,7 +2,7 @@
 create table users  
 (  
     id          serial  
-        constraint users_pk primary key,  
+	    constraint users_pk primary key,  
     alias       text not null  
         constraint users_alias_unique unique,  
     external_id text not null  
@@ -11,15 +11,15 @@ create table users
   
 create table groups  
 (  
-    id         serial  
-        constraint groups_pk primary key,  
+    id         serial
+	    constraint groups_pk primary key,  
     title      text not null,  
     created_by integer not null,  
     created_at timestamptz not null,  
     updated_by integer,  
     updated_at timestamptz,  
     version integer,  
-    constraint groups_users_created_by_fk  
+	constraint groups_users_created_by_fk  
         foreign key (created_by) references users (id),  
     constraint groups_users_updated_by_fk  
         foreign key (updated_by) references users (id)  

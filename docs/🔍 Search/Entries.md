@@ -1,4 +1,4 @@
-Describes a search structure for [[Entries|entries]] and [[Gallery - WIP|galleries]]. At this level these entities are considered the same.
+Describes a search structure for [[Entry - WIP|entries]] and [[Gallery - WIP|galleries]]. At this level these entities are considered the same.
 
 Stores documents with the following contents:
 ```

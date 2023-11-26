@@ -3,6 +3,7 @@ A user represents a signed in product user. Users are automatically created afte
 A user consists of:
 - `id` — a [[Id|unique identifier]] of a user. ^id
 - `alias` — a unique, user selected display name within platform. ^alias
+%% we should probably also store OIDC provider type in case we're gonna have multiple (we will probably end up having at least 2 or 3) %%
 - `external_id` — id of a user in an external identity provider.
 
 Invariants:

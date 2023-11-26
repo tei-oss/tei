@@ -1,1 +1,2 @@
+%% at first I thought that something like UNIX timestamp might be better, but on the second thought I think ISO should be fine %%
 All timestamp must be represented in [ISO-8601 datetime format](https://www.rfc-editor.org/rfc/rfc3339) with UTC time-zone and millisecond precision. For example `2023-12-31T23:59:60.000Z`.
