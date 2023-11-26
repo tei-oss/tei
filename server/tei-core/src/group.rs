@@ -24,7 +24,6 @@ impl From<i32> for GroupId {
 pub struct Group {
     pub id: GroupId,
     pub title: Box<str>,
-    //pub members: Box<[GroupMember]>, // TODO: is it safe to inline all users?
     pub tags: Box<[TagId]>,
     pub audit: Audit,
 }

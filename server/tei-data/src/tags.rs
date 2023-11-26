@@ -65,7 +65,7 @@ impl TagsDb {
         let rows = db
             .query(
                 "select * from tags where group_id = $1 and id = $2",
-                &[&id.group_id.as_i32(), &id.id],
+                &[&id.group_id().as_i32(), &id.as_i64()],
             )
             .await?;
 
