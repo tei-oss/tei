@@ -24,6 +24,12 @@ impl TagId {
     pub fn as_i64(&self) -> i64 {
         self.id
     }
+
+    #[must_use]
+    pub fn as_uid(&self) -> String {
+        // TODO: Base64URL
+        format!("{}_{}", self.group_id.as_i32(), self.id)
+    }
 }
 
 #[derive(Debug, Clone)]
