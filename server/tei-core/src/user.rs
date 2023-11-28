@@ -10,6 +10,12 @@ impl UserId {
     pub fn as_i32(&self) -> i32 {
         self.id
     }
+
+    #[must_use]
+    pub fn to_uid(&self) -> String {
+        // TODO: Base64URL
+        self.id.to_string()
+    }
 }
 
 impl From<i32> for UserId {
