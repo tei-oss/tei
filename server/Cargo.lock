@@ -1563,22 +1563,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1ad4cc8da4ef723ed60bced201181d83791ad433213d8c24efffda1eec85d741"
 
 [[package]]
-name = "sandbox"
-version = "0.1.0"
-dependencies = [
- "dotenvy",
- "futures",
- "tei-core",
- "tei-data",
- "tei-filter",
- "tei-mq",
- "tokio",
- "tracing",
- "tracing-subscriber",
- "uuid",
-]
-
-[[package]]
 name = "schannel"
 version = "0.1.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1892,6 +1876,7 @@ dependencies = [
  "tei-core",
  "tei-data",
  "tei-filter",
+ "tei-hosting",
  "thiserror",
  "time",
  "tokio",
@@ -1933,6 +1918,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tei-hosting"
+version = "0.1.0"
+dependencies = [
+ "color-eyre",
+ "dotenvy",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "tei-indexd"
 version = "0.1.0"
 dependencies = [
@@ -1945,6 +1940,7 @@ dependencies = [
  "tei-core",
  "tei-data",
  "tei-filter",
+ "tei-hosting",
  "tei-mq",
  "tokio",
  "tracing",

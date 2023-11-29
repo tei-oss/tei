@@ -8,6 +8,7 @@ tei-core = { workspace = true }
 tei-data = { workspace = true }
 tei-mq = { workspace = true }
 tei-filter = { workspace = true }
+tei-hosting = { workspace = true }
 
 dotenvy = { workspace = true }
 tokio = { workspace = true }

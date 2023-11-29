@@ -6,10 +6,10 @@ members = [
     "tei-data",
     "tei-filter",
     "tei-mq",
+    "tei-hosting",
     # applications
     "tei-indexd",
     "tei-api",
-    "sandbox",
 ]
 
 [profile.dev]
@@ -49,3 +49,4 @@ tei-core = { path = "./tei-core" }
 tei-data = { path = "./tei-data" }
 tei-filter = { path = "./tei-filter" }
 tei-mq = { path = "./tei-mq" }
+tei-hosting = { path = "./tei-hosting" }
