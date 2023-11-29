@@ -8,20 +8,11 @@ use deadpool_postgres::Pool;
 use meilisearch_sdk::Client;
 use serde::Serialize;
 use tower_http::trace::TraceLayer;
-use tracing::{info, subscriber::set_global_default, Level};
+use tracing::info;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    color_eyre::install()?;
-    dotenvy::dotenv().expect(".env file not found");
-
-    let collector = tracing_subscriber::fmt()
-        .with_max_level(Level::DEBUG)
-        .finish();
-
-    set_global_default(collector)?;
-
-    // TODO: Move everything avobe this line to separate crate
+    tei_hosting::install()?;
 
     let router = build_router()?;
     let endpoint = tei_core::env::get("TEI_API_BIND").unwrap_or("0.0.0.0:3000".to_owned());

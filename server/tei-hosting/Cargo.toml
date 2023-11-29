@@ -1,0 +1,10 @@
+[package]
+name = "tei-hosting"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dotenvy = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing = { workspace = true }
+color-eyre = { workspace = true }
