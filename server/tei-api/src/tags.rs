@@ -4,6 +4,7 @@ use axum::{
     Json, Router,
 };
 use serde::Serialize;
+use std::convert::Into;
 use tei_core::tag::Tag;
 use tei_data::tags::TagsDb;
 
@@ -49,9 +50,9 @@ impl From<Tag> for TagDto {
         Self {
             id: value.id.as_uid(),
             label: value.label.into(),
-            color: value.color.map(|v| v.into()),
-            description: value.description.map(|v| v.into()),
-            icon: value.icon.map(|v| v.into()),
+            color: value.color.map(Into::into),
+            description: value.description.map(Into::into),
+            icon: value.icon.map(Into::into),
             group_id: value.group_id.as_uid(),
             audit: value.audit.into(),
         }
