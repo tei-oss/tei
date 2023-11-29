@@ -41,16 +41,19 @@ pub struct ProblemDetails {
 }
 
 impl ProblemDetails {
+    #[must_use]
     pub fn with_type<T: Into<String>>(mut self, value: T) -> Self {
         self.r#type = Some(value.into());
         self
     }
 
+    #[must_use]
     pub fn with_title<T: Into<String>>(mut self, value: T) -> Self {
         self.title = Some(value.into());
         self
     }
 
+    #[must_use]
     pub fn with_details<T: Into<String>>(mut self, value: T) -> Self {
         self.details = Some(value.into());
         self
@@ -65,9 +68,9 @@ impl ProblemDetails {
         let key_uni = UniCase::new(key.as_str());
 
         if RESERVED_NAMES.contains(&key_uni) {
-            Err(ApiError::internal(format!(
+            return Err(ApiError::internal(format!(
                 "'{key}' can't be used as an extension key"
-            )))?
+            )))?;
         }
 
         let value = serde_json::to_value(value).map_err(ApiError::internal_err)?;
@@ -101,6 +104,7 @@ impl IntoResponse for ApiError {
 }
 
 impl ApiError {
+    #[must_use]
     pub fn new(status: StatusCode, details: ProblemDetails) -> Self {
         Self {
             status,
@@ -138,6 +142,14 @@ impl From<tags::Error> for ApiError {
     }
 }
 
+impl From<tei_filter::tags::Error> for ApiError {
+    fn from(value: tei_filter::tags::Error) -> Self {
+        match value {
+            tei_filter::tags::Error::Meilisearch(err) => ApiError::internal_err(err),
+        }
+    }
+}
+
 // ERRORS
 
 impl ApiError {
@@ -166,6 +178,7 @@ impl ApiError {
 }
 
 impl ProblemDetails {
+    #[must_use]
     pub fn internal() -> Self {
         ProblemDetails::default()
             .with_type("urn:error:internal")
@@ -173,6 +186,7 @@ impl ProblemDetails {
             .with_details("An internal server error occurred while processing the request. Please try again later.")
     }
 
+    #[must_use]
     pub fn not_found() -> Self {
         ProblemDetails::default()
             .with_type("urn:error:not-found")
