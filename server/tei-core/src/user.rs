@@ -1,6 +1,6 @@
 use derive_more::Display;
 
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Display)]
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Display, Default)]
 pub struct UserId {
     id: i32,
 }

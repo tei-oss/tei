@@ -2,7 +2,7 @@ use derive_more::Display;
 
 use crate::{auxiliary::Audit, tag::TagId, user::UserId};
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Display)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Display, Default)]
 pub struct GroupId {
     id: i32,
 }
