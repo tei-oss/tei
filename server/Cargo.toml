@@ -1,7 +1,8 @@
 [workspace]
-resolver = "2"
 members = [
-    # libs
+    # libs (misc)
+    "tei-threading",
+    # libs (app)
     "tei-core",
     "tei-data",
     "tei-filter",
@@ -10,7 +11,9 @@ members = [
     # applications
     "tei-indexd",
     "tei-api",
+    "tei-threading",
 ]
+resolver = "2"
 
 [profile.dev]
 debug = false
@@ -50,3 +53,9 @@ tei-data = { path = "./tei-data" }
 tei-filter = { path = "./tei-filter" }
 tei-mq = { path = "./tei-mq" }
 tei-hosting = { path = "./tei-hosting" }
+tei-threading = { path = "./tei-threading" }
+
+testcontainers = { version = "0.15.0", features = ["tokio"] }
+testcontainers-modules = { version = "0.3.1", features = ["postgres"] }
+refinery = { version = "0.8.11", features = ["tokio-postgres"] }
+ctor = "0.2.6"
